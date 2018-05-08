@@ -149,7 +149,6 @@ void StartLogging()
                         case VK_DELETE:
                             write<<"<Del>";
                             break;
-
                         default:
                             write<<c;
                     }
